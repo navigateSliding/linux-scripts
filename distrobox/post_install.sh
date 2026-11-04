@@ -23,6 +23,22 @@ Architectures: amd64,arm64,armhf
 Signed-By: /usr/share/keyrings/microsoft.gpg
 EOF
   sudo apt update && sudo apt install code -y
+
+  # Extension Installation
+  extensions=(
+    "catppuccin.catppuccin-vsc"
+    "shd101wyy.markdown-preview-enhanced"
+    "pkief.material-icon-theme"
+    "esbenp.prettier-vscode"
+    "adpyke.codesnap"
+    "aaron-bond.better-comments"
+    "christian-kohler.path-intellisense"
+    "vscodevim.vim"
+  )
+
+  for extension in "${extensions[@]}"; do
+    code --install-extension "$extension"
+  done
 }
 
 browser() {
